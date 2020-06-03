@@ -7,3 +7,5 @@ read -p "Enter the third Number = " c
 
 op1=$(( $a + $b * $c ))
 
+op2=$(( $a % $b + $c ))
+
