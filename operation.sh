@@ -22,11 +22,11 @@ do
 			3)
 				op3=`echo "scale=2;$c + $a / $b" | bc`
 				Arithmetic["$i"]=$op3
-            ;;
+				;;
 			4)
 				op4=$(( $a * $b + $c ))
 				Arithmetic["$i"]=$op4
-            ;;
+				;;
 			*)
 				echo "Invalid"
 				;;
@@ -39,7 +39,10 @@ do
 	ArithArr[$i]=${Arithmetic[$i]}
 done
 
-echo ${ArithArr[@]}
+echo "descending order : "
+printf '%s\n' "${ArithArr[@]}" | sort -r
+
+
 
 
 
