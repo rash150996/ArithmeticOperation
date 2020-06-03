@@ -5,12 +5,8 @@ read -p "Enter the first Number = " a
 read -p "Enter the second Number = " b
 read -p "Enter the third Number = " c
 
-op1=$(( $a + $b * $c ))
-op2=$(( $a % $b + $c ))
-op3=`echo "scale=2;$c + $a / $b" | bc`
-op4=$(( $a * $b + $c ))
-
 declare -A Arithmetic
+
 i=1
 while (( i<=4 ))
 do
@@ -21,15 +17,15 @@ do
 				;;
 			2)
 				op2=$(( $a % $b + $c ))
-            Arithmetic["$i"]=$op2
-            ;;
+				Arithmetic["$i"]=$op2
+				;;
 			3)
-            op3=`echo "scale=2;$c + $a / $b" | bc`
-            Arithmetic["$i"]=$op3
+				op3=`echo "scale=2;$c + $a / $b" | bc`
+				Arithmetic["$i"]=$op3
             ;;
 			4)
-            op4=$(( $a * $b + $c ))
-            Arithmetic["$i"]=$op4
+				op4=$(( $a * $b + $c ))
+				Arithmetic["$i"]=$op4
             ;;
 			*)
 				echo "Invalid"
@@ -38,6 +34,13 @@ do
 	i=`expr $i + 1`
 done
 
-echo ${Arithmetic[@]}
+for (( i=0; i<=4; i++ ))
+do
+	ArithArr[$i]=${Arithmetic[$i]}
+done
+
+echo ${ArithArr[@]}
+
+
 
 
