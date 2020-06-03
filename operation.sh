@@ -10,3 +10,5 @@ op2=$(( $a % $b + $c ))
 echo $op2
 op3=`echo "scale=2;$c + $a / $b" | bc`
 echo $op3
+op4=$(( $a * $b + $c ))
+echo $op4
