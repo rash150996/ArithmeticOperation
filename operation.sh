@@ -39,8 +39,8 @@ do
 	ArithArr[$i]=${Arithmetic[$i]}
 done
 
-echo "descending order : "
-printf '%s\n' "${ArithArr[@]}" | sort -r
+echo "Ascending order : "
+printf '%s\n' "${ArithArr[@]}" | sort -n
 
 
 
