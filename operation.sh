@@ -5,3 +5,5 @@ read -p "Enter the first Number = " a
 read -p "Enter the second Number = " b
 read -p "Enter the third Number = " c
 
+op1=$(( $a + $b * $c ))
+
